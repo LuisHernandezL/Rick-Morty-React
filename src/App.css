@@ -1,38 +1,150 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  margin: auto;
+  max-width: 992px;
   min-height: 100vh;
+  width: 95%;
+  
+}
+
+ul{
+  list-style: none;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url(/src/assests/images/wpWorld.jpg);
+}
+.container-header-background{
+  background-size: cover ;
+  background-image: url(/src/assests/images/banner.png) ;
+  height: 200px;
+  width: 100%;
+  background-position: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0 auto;
+
+}
+
+/* .container-header{
+  background-size:cover ;
+  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f8f55e29-d3ce-45f2-a607-07b8d13a610f/db6moc1-c4b862c0-13f3-429d-ba53-b128edaf9f72.png/v1/fill/w_1024,h_341,q_75,strp/portada_para_twitter_rick_and_morty_by_katperez29-db6moc1.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwib2JqIjpbW3sicGF0aCI6Ii9mL2Y4ZjU1ZTI5LWQzY2UtNDVmMi1hNjA3LTA3YjhkMTNhNjEwZi9kYjZtb2MxLWM0Yjg2MmMwLTEzZjMtNDI5ZC1iYTUzLWIxMjhlZGFmOWY3Mi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCIsImhlaWdodCI6Ijw9MzQxIn1dXSwid21rIjp7InBhdGgiOiIvd20vZjhmNTVlMjktZDNjZS00NWYyLWE2MDctMDdiOGQxM2E2MTBmL2thdHBlcmV6MjktNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0._nE2CuJPUx50FrN-lHBS7WugqFWccVfM9i5PxH7fbo4') no-repeat;
+  height: 300px;
+  width: 100%;
+  background-position: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+} */
+.search-bar{
+  position: relative;
+}
+
+.search-bar input{
+  border: 2px solid rgb(140, 236, 140);
+  box-shadow: 0px 0px 11px 0px rgb(140, 236, 140);
+  border-radius: 15px;
+  height: 30px;
+  margin-bottom: 5px;
+  width: 275px;
+  background-color: #44acbe;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(88, 30, 88);
+}
+.search-bar button{
+  position: absolute;
+  right: 0px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  width: 30px;
+  background-color: #0cee2e;
+}
+
+.container-location-info{
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgba(88, 30, 88, 0.61);
   color: white;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 13px;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.location-info-name{
+  margin-bottom: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.location-info-name h1{
+  border-bottom: 2px solid #44acbe;
+  display: inline-block;
+}
+.location-info-general{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container-residentInfo{
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.container-residentInfo h3{
+  border-bottom: 2px solid #44acbe;
+}
+.card-section{
+  margin-top: 10px;
+  background-color: rgba(88, 30, 88, 0.61);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pagination-container ul li a{
+  text-decoration: none;
+  color:white ;
+}
+.pagination-container ul li a:hover{
+  text-decoration: none;
+  color: #44acbe;
+}
+.pagination-container ul li{
+  font-size: 20px;
+  border: 2px solid white;
+  padding: 1px 6px;
+  border-radius: 3px; 
+}
+.pagination-container ul li:hover{
+  
+  background-color: rgba(0, 0, 0, 0.445);
+}
+.pagination-container ul{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  list-style: none;
+  
+  padding: 0 25px;
+  margin-top: 15px;
+  border-radius: 15px;
+  
+}
+.pagination-container{
+  display: flex;
+  justify-content: center;
 }
