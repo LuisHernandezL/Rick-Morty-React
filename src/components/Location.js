@@ -42,7 +42,9 @@ const Location = () => {
             }else{
             alert("We only have 126 locations to show")
         }
-    } 
+    }  
+
+
 
       
 
