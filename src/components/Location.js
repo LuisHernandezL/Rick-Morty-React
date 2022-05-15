@@ -100,7 +100,9 @@ const Location = () => {
                         {currentPost?.map(resident => (
                             <ResidentInfo resident={resident} key={resident} array={location.residents}/>
                         ))}
-                    <Pagination postPerPage={postPerPage} totalPost={location.residents?.length} paginate={paginate}/>
+                </section>
+                <section>
+                <Pagination postPerPage={postPerPage} totalPost={location.residents?.length} paginate={paginate}/>
                 </section>
         </div>
     );

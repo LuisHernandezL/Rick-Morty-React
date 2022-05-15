@@ -18,6 +18,7 @@ ul{
 
 body{
   background-image: url(/src/assests/images/wpWorld.jpg);
+  padding: 10px;
 }
 .container-header-background{
   background-size: cover ;
@@ -29,7 +30,8 @@ body{
   justify-content: center;
   align-items: flex-end;
   margin: 0 auto;
-
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 5px #0cee2e;
 }
 
 /* .container-header{
@@ -74,6 +76,7 @@ body{
   flex-direction: column;
   align-items: center;
   background-color: rgba(88, 30, 88, 0.61);
+  box-shadow: 0px 0px 5px 5px rgba(88, 30, 88, 0.892);
   color: white;
   border-radius: 15px;
   padding: 20px;
@@ -109,10 +112,12 @@ body{
 .card-section{
   margin-top: 10px;
   background-color: rgba(88, 30, 88, 0.61);
+  box-shadow: 0px 0px 5px 5px rgba(88, 30, 88, 0.892);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
 }
 
 .pagination-container ul li a{
@@ -121,7 +126,6 @@ body{
 }
 .pagination-container ul li a:hover{
   text-decoration: none;
-  color: #44acbe;
 }
 .pagination-container ul li{
   font-size: 20px;
@@ -130,8 +134,9 @@ body{
   border-radius: 3px; 
 }
 .pagination-container ul li:hover{
-  
-  background-color: rgba(0, 0, 0, 0.445);
+  border: 1px solid #0cee2e;
+  box-shadow: 0px 0px 5px 5px rgb(140, 236, 140);;
+  background-color: #0cee2eb3
 }
 .pagination-container ul{
   display: flex;
@@ -139,12 +144,27 @@ body{
   gap: 50px;
   list-style: none;
   
-  padding: 0 25px;
-  margin-top: 15px;
+  padding: 5px;
   border-radius: 15px;
   
 }
 .pagination-container{
+  margin-top: 15px;
   display: flex;
   justify-content: center;
+  
+  background-color: rgba(88, 30, 88, 0.61);
+  box-shadow: 0px 0px 5px 5px rgba(88, 30, 88, 0.892);
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 600px) {
+  .card-section {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+    
+      
+  }
 }
