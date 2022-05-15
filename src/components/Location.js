@@ -2,7 +2,6 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Pagination from './Pagination';
 import ResidentInfo from './ResidentInfo';
-import banner from '../assests/images/banner.png'
 
 
 const Location = () => {
@@ -67,7 +66,7 @@ const Location = () => {
 
                 
                     <div className='search-bar'>
-                        <input type="text" onChange={e => setId(e.target.value)} value={id}/>
+                        <input type="text" onKeyDown={searchId} placeholder='Type ID (1 - 126)' onChange={e => setId(e.target.value)} value={id}/>
                         <button onClick={searchId}><i className="fa-solid fa-magnifying-glass"></i></button>
                         
                     </div>
