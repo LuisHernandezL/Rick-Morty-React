@@ -14,11 +14,7 @@ const ResidentInfo = ({resident}) => {
         .then(res=>SetInfo(res.data))
     },[resident])
     
-<<<<<<< HEAD
     
-=======
-    console.log(info);
->>>>>>> 7d9b077f8b84136b053800fcd6045f0f5cfee2f1
 
     return (
         <div className='card'>

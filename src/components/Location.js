@@ -2,10 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Pagination from './Pagination';
 import ResidentInfo from './ResidentInfo';
-<<<<<<< HEAD
-
-=======
->>>>>>> 7d9b077f8b84136b053800fcd6045f0f5cfee2f1
+import Loader from '../assests/images/loader.gif'
 
 
 const Location = () => {
@@ -69,51 +66,60 @@ const Location = () => {
     
 
     return (
-        
-        <div className='container'>
-            
-            <header className='container-header'>
-                <div className='container-header-background'>
-
+        <div>
+            {
+            loading?(
+                <div className='loader-container'>
+                    <img className='loader' src={Loader} alt="" />
+                    <h1 className='loader-h1'>Loading...</h1>
+                </div>
+            ):(
+            <div className='container'>
                 
-                    <div className='search-bar'>
-                        <input type="text" onKeyDown={searchId} placeholder='Type ID (1 - 126)' onChange={e => setId(e.target.value)} value={id}/>
-                        <button onClick={searchId}><i className="fa-solid fa-magnifying-glass"></i></button>
-                        
-                    </div>
-                </div>
-            </header>
+                <header className='container-header'>
+                    <div className='container-header-background'>
 
-                <section className='container-location-info'>
-
-                    <div className='location-info'>
-                        <div className='location-info-name'>
-                            <h1><b>{location.name}</b></h1>
+                    
+                        <div className='search-bar'>
+                            <input type="text"  placeholder='Type ID (1 - 126)' onChange={e => setId(e.target.value)} value={id}/>
+                            <button onClick={searchId}><i className="fa-solid fa-magnifying-glass"></i></button>
+                            
                         </div>
-
-                        <div className='location-info-general'>
-
-                            <h3><b>Type:</b> {location.type}</h3>
-                            <h3>Dimension: {location.dimension}</h3>
-                            <h3>Population: {location.residents?.length}</h3>
-                        
-                        </div>
-                        
-                        
                     </div>
-                </section>
-                <div className='container-residentInfo'>
-                    <h3>Residents</h3>
-                </div>
-                <section className='card-section'>
-                        
-                        {currentPost?.map(resident => (
-                            <ResidentInfo resident={resident} key={resident} array={location.residents}/>
-                        ))}
-                </section>
-                <section>
-                <Pagination postPerPage={postPerPage} totalPost={location.residents?.length} paginate={paginate}/>
-                </section>
+                </header>
+
+                    <section className='container-location-info'>
+
+                        <div className='location-info'>
+                            <div className='location-info-name'>
+                                <h1><b>{location.name}</b></h1>
+                            </div>
+
+                            <div className='location-info-general'>
+
+                                <h3><b>Type:</b> {location.type}</h3>
+                                <h3>Dimension: {location.dimension}</h3>
+                                <h3>Population: {location.residents?.length}</h3>
+                            
+                            </div>
+                            
+                            
+                        </div>
+                    </section>
+                    <div className='container-residentInfo'>
+                        <h3>Residents</h3>
+                    </div>
+                    <section className='card-section'>
+                            
+                            {currentPost?.map(resident => (
+                                <ResidentInfo resident={resident} key={resident} array={location.residents}/>
+                            ))}
+                    </section>
+                    <section>
+                    <Pagination postPerPage={postPerPage} totalPost={location.residents?.length} paginate={paginate}/>
+                    </section>
+            </div>
+            )}
         </div>
     );
 };
