@@ -2,14 +2,14 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Pagination from './Pagination';
 import ResidentInfo from './ResidentInfo';
-import Loader from '../assests/images/loader.gif'
+
 
 
 const Location = () => {
 
     const [location,setLocation]=useState({})
     const [id,setId]=useState("")
-    const [loading,setLoading]=useState(true)
+    
     
     const [currentPage,setCurrentPage]=useState(1)
     
@@ -22,8 +22,8 @@ const Location = () => {
         axios.get(`https://rickandmortyapi.com/api/location/${random}
         `).then(res=>{
             setLocation(res.data)
-            setLoading(false)
-            })
+            
+        })
 
         
     },[])
@@ -37,7 +37,7 @@ const Location = () => {
             axios.get(`https://rickandmortyapi.com/api/location/${id}`)
                 .then(res=>
                     setLocation(res.data),
-                    setLoading(false)
+                    
                 )
             }else{
             alert("We only have 126 locations to show")
@@ -66,14 +66,7 @@ const Location = () => {
     
 
     return (
-        <div>
-            {
-            loading?(
-                <div className='loader-container'>
-                    <img className='loader' src={Loader} alt="" />
-                    <h1 className='loader-h1'>Loading...</h1>
-                </div>
-            ):(
+        
             <div className='container'>
                 
                 <header className='container-header'>
@@ -119,8 +112,7 @@ const Location = () => {
                     <Pagination postPerPage={postPerPage} totalPost={location.residents?.length} paginate={paginate}/>
                     </section>
             </div>
-            )}
-        </div>
+        
     );
 };
 
