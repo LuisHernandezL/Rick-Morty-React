@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import '../assests/styles/ResidentInfo.css'
+import '../assests/styles/ResidentInfo.css';
+import GetColor from './GetColor';
 
 const ResidentInfo = ({resident}) => {
 
@@ -13,7 +14,11 @@ const ResidentInfo = ({resident}) => {
         .then(res=>SetInfo(res.data))
     },[resident])
     
+<<<<<<< HEAD
     
+=======
+    console.log(info);
+>>>>>>> 7d9b077f8b84136b053800fcd6045f0f5cfee2f1
 
     return (
         <div className='card'>
@@ -25,7 +30,7 @@ const ResidentInfo = ({resident}) => {
                 <li className='card-name'>
                   <b>Name:</b>  {info.name}
                 </li>
-                <li className='card-status'> <span className='status-icon'></span><b>Status:</b>  {info.status}</li>
+                <li className='card-status'> <span className='status-icon' style={{background : GetColor(info.status)}} ></span><b>Status:</b>  {info.status}</li>
                 <li className='card-origin'><b>Origin:</b>  {info.origin?.name}</li>
                 <li className='card-episode'><b>Episodes where appear:</b>  {info.episode?.length}</li>
             </ul>
