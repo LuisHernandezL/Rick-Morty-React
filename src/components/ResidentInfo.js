@@ -13,6 +13,7 @@ const ResidentInfo = ({resident}) => {
         .then(res=>SetInfo(res.data))
     },[resident])
     
+    
 
     return (
         <div className='card'>

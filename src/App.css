@@ -32,16 +32,7 @@ body{
 
 }
 
-/* .container-header{
-  background-size:cover ;
-  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f8f55e29-d3ce-45f2-a607-07b8d13a610f/db6moc1-c4b862c0-13f3-429d-ba53-b128edaf9f72.png/v1/fill/w_1024,h_341,q_75,strp/portada_para_twitter_rick_and_morty_by_katperez29-db6moc1.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwib2JqIjpbW3sicGF0aCI6Ii9mL2Y4ZjU1ZTI5LWQzY2UtNDVmMi1hNjA3LTA3YjhkMTNhNjEwZi9kYjZtb2MxLWM0Yjg2MmMwLTEzZjMtNDI5ZC1iYTUzLWIxMjhlZGFmOWY3Mi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCIsImhlaWdodCI6Ijw9MzQxIn1dXSwid21rIjp7InBhdGgiOiIvd20vZjhmNTVlMjktZDNjZS00NWYyLWE2MDctMDdiOGQxM2E2MTBmL2thdHBlcmV6MjktNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0._nE2CuJPUx50FrN-lHBS7WugqFWccVfM9i5PxH7fbo4') no-repeat;
-  height: 300px;
-  width: 100%;
-  background-position: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-} */
+
 .search-bar{
   position: relative;
 }

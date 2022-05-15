@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Pagination from './Pagination';
 import ResidentInfo from './ResidentInfo';
-import banner from '../assests/images/banner.png'
+
 
 
 const Location = () => {
@@ -10,7 +10,9 @@ const Location = () => {
     const [location,setLocation]=useState({})
     const [id,setId]=useState("")
     const [loading,setLoading]=useState(true)
+    
     const [currentPage,setCurrentPage]=useState(1)
+    
     const [postPerPage]=useState(10)
 
     
@@ -25,6 +27,8 @@ const Location = () => {
 
         
     },[])
+
+    
     
 
     const searchId = () => {
@@ -34,17 +38,20 @@ const Location = () => {
                 .then(res=>
                     setLocation(res.data),
                     setLoading(false)
-                    )
-
-        }else{
+                )
+            }else{
             alert("We only have 126 locations to show")
         }
-    }
+    } 
+
+      
+
+
 
   //get current posts
   const indexOfLastPost = currentPage * postPerPage
   const indexOfFirstPost = indexOfLastPost - postPerPage
-  const currentPost=location.residents?.slice(indexOfFirstPost,indexOfLastPost)
+  const currentPost = location.residents?.slice(indexOfFirstPost,indexOfLastPost)
 
   //change page
   const paginate = (pageNumber)=>{
@@ -59,8 +66,6 @@ const Location = () => {
     return (
         
         <div className='container'>
-            {/* <img src={banner} alt="" /> */}
-            
             
             <header className='container-header'>
                 <div className='container-header-background'>
