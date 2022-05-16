@@ -9,6 +9,12 @@
     box-shadow: 0px 0px 11px 0px rgb(140, 236, 140);
     border: 2px solid rgb(140, 236, 140) ;
 }
+
+.card-name, .card-status,
+.card-origin, .card-episode {
+    max-width: 308px;
+}
+
 .card-image-container{
     width: 100%
 }
