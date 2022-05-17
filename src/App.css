@@ -133,13 +133,19 @@ body{
   box-shadow: 0px 0px 5px 5px rgb(140, 236, 140);;
   background-color: #0cee2eb3
 }
+.pagination-container ul li button{
+  border: none;
+  font-size: 25px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
 .pagination-container ul{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 25px;
   list-style: none;
-  
   padding: 5px;
   border-radius: 15px;
   
@@ -174,6 +180,36 @@ body{
   border-radius: 50%; 
   margin-top: 60%;
 }
+.suggestion-bar-container{
+  position: relative;
+}
+.suggestion-bar{
+  color: white;
+  position: absolute;
+  right:0px;
+  background-color:rgb(88, 30, 88);
+  width: 275px;
+  border-radius: 15px;
+  padding: 12px;
+  height: 180px;
+  overflow-y: auto;
+  
+  
+}
+.suggestion-bar li{
+  cursor:pointer;
+  margin-bottom: 10px;
+}
+
+.suggestion-bar li:hover{
+  color: #0cee2e;
+}
+
+
+
+
+
+
 
 @media screen and (min-width: 600px) {
   .card-section {

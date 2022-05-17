@@ -14,6 +14,7 @@ const Location = () => {
     const [currentPage,setCurrentPage]=useState(1)
     
     const [postPerPage]=useState(10)
+    const [suggestions,setSuggestions]=useState([])
 
     
 
@@ -22,11 +23,28 @@ const Location = () => {
         axios.get(`https://rickandmortyapi.com/api/location/${random}
         `).then(res=>{
             setLocation(res.data)
-            setLoading(false)
             })
 
         
     },[])
+
+
+    useEffect(()=>{
+        if(id){
+        axios.get(`https://rickandmortyapi.com/api/location/?name=${id}`)
+            .then(res => setSuggestions(res.data));
+        }else{
+            setSuggestions([])
+        }
+    },[id])
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            setLoading(false);
+        },5000)
+
+    },[])
+
 
     
     
@@ -42,6 +60,7 @@ const Location = () => {
             }else{
             alert("We only have 126 locations to show")
         }
+        setCurrentPage(1);
     }  
 
 
@@ -60,6 +79,7 @@ const Location = () => {
       setCurrentPage(pageNumber)
   }
 
+  
     
    
 
@@ -81,10 +101,25 @@ const Location = () => {
 
                     
                         <div className='search-bar'>
-                            <input type="text" placeholder='Type ID (1 - 126)' onChange={e => setId(e.target.value)} value={id}/>
+                            <input type="text" placeholder='Type Dimension or ID(1 - 126)' onChange={e => setId(e.target.value)} value={id}/>
+
                             <button onClick={searchId}><i className="fa-solid fa-magnifying-glass"></i></button>
                             
                         </div>
+                        {suggestions.results?.length > 0 && (
+                            <div className='suggestion-bar-container'>
+                            <ul className='suggestion-bar'>
+                                {suggestions.results?.map(suggestion => (
+                                    <li key={suggestion.id} onClick={()=>setLocation(suggestion)}>
+                                        {suggestion.name}
+                                    </li>
+                                    
+                              
+                                ))}
+                            </ul>
+                        </div>
+                        )}
+                        
                     </div>
                 </header>
 

@@ -8,15 +8,20 @@ const Pagination = ({postPerPage,totalPost ,paginate}) => {
         pageNumbers.push(i);
     }
 
+    const buttonsFunction =(number)=>{
+        paginate(number);
+        window.scrollTo( 0, 0 );
+    }
+
    
     return (
         <nav className='pagination-container'>
             <ul className="pagination">
                 {pageNumbers.map(number=>(
                     <li key={number} className="page-item">
-                        <a onClick={()=>paginate(number)} href="!#" className='page-link'>
+                        <button onClick={()=>buttonsFunction(number)}  className='page-link'>
                             {number}
-                        </a>
+                        </button>
                     </li>
                 ))}
             </ul>
