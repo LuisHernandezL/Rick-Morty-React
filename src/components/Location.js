@@ -60,8 +60,15 @@ const Location = () => {
             }else{
             alert("We only have 126 locations to show")
         }
+        setId("")
         setCurrentPage(1);
     }  
+
+    const searchSuggestion=(suggestion)=>{
+        setLocation(suggestion)
+        setSuggestions("")
+        setId("")
+    }
 
 
 
@@ -110,7 +117,7 @@ const Location = () => {
                             <div className='suggestion-bar-container'>
                             <ul className='suggestion-bar'>
                                 {suggestions.results?.map(suggestion => (
-                                    <li key={suggestion.id} onClick={()=>setLocation(suggestion)}>
+                                    <li key={suggestion.id} onClick={()=>searchSuggestion(suggestion)}>
                                         {suggestion.name}
                                     </li>
                                     
